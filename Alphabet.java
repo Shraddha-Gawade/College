@@ -1,33 +1,22 @@
-import java.util.*;
-class Alphabet1 <T> {
-T a,b;
-Alphabet1(T a, T b){
-this.a=a;
-this.b=b;
+import java.io.*;
+import java.util.Arrays;
+import java.util.Scanner;
+ class goat
+{
+public static void main(String[] args)
+{
+System.out.print("Enter string to reverse:");
+Scanner read = new Scanner(System.in);
+String str = read.nextLine();
+char c[] = str.toCharArray();
+Arrays.sort(c);
+String k=new String(c);
+String reverse = "";
+for(int i = k.length() - 1; i >= 0; i--)
+{
+reverse = reverse +k.charAt(i);
 }
-public void print(){
-System.out.println(a+ " "+b);
-}
-}
-class subclass extends Alphabet1{
-subclass(int a, int b) {
-super(a, b);
-}
-public void print1(){
-super.print();
-}
-}
-class Alphabet<T>{
-public static void main(String[] args){
-Scanner x=new Scanner(System.in);
-try{
-int a=Integer.parseInt(x.next());
-int b=Integer.parseInt(x.next());
-subclass ob=new subclass(a,b);
-ob.print1();
-}
-catch (Exception e){
-System .out.println("enter the integer data");
-}
+System.out.print("Reversed string is:");
+System.out.print(reverse);
 }
 }
