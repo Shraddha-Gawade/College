@@ -1,35 +1,31 @@
-import java.util.Scanner;
-public class Array
-{
-public static void main(String[] args) {
-int i,j;
-try{
-int x;
-Scanner s=new Scanner(System.in);
-System.out.println(" First Element as the number and Second
-Element as the Square of the number");
-System.out.println("Enter the values of m and n lower and uppper
-ranges");
-int m=s.nextInt();
-int n=s.nextInt();
-x=(n-m)+1;
-int k=m;
-int arr[][]=new int[x][5];
-System.out.println("The output is:");
-System.out.print("[");
-for(i=0;i<x;i++)
-{
-arr[i][0]=k;
-arr[i][1]=(k*k);
-k=k+1;
-System.out.print("("+arr[i][0]+",");
-System.out.print(arr[i][1]+"),");
+import java.io.*;
+class Array{
+	static boolean chkPair(int A[], int size, int x)
+	{
+		for (int i = 0; i < (size - 1); i++) {
+			for (int j = (i + 1); j < size; j++) {
+				if (A[i] + A[j] == x) {
+					return true;
+				}
+			}
+		}
+
+		return false;
+	}
+
+	public static void main(String[] args)
+	{
+
+		int A[] = { 0, -1, 2, -3, 1 };
+		int x = -2;
+		int size = A.length;
+
+		if (chkPair(A, size, x)) {
+			System.out.println("Yes");
+		}
+		else {
+			System.out.println("No");
+		}
+	}
 }
-System.out.print("]");
-}
-catch(Exception e)
-{
-System.out.println("Invalid");
-}
-}
-}
+
